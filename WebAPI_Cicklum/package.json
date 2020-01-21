@@ -1,0 +1,34 @@
+{
+  "name": "webapi_cicklum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test-debug": "./node_modules/.bin/node-debug ./node_modules/.bin/jest -i --watch",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juan121/Cicklum.git"
+  },
+  "author": "JuanFelipeEncinasPascual",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juan121/Cicklum/issues"
+  },
+  "homepage": "https://github.com/juan121/Cicklum#readme",
+  "dependencies": {
+    "@types/node": "^13.1.8",
+    "angular": "^1.7.9",
+    "common-js": "^0.3.8",
+    "toastr": "^2.1.4"
+  },
+  "devDependencies": {
+    "@types/toastr": "^2.1.37",
+    "jest": "^24.9.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5"
+  }
+}

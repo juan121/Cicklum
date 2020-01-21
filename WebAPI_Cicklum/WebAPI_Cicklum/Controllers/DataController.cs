@@ -1,20 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BusinessModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Repository;
 
 namespace WebAPI_Cicklum.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class DataController : ControllerBase
     {
+        private IDataRepo _repo;
+        public DataController(IDataRepo repo)
+        {
+            _repo = repo;
+        }
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IDataBusiness> Get()
         {
-            return new string[] { "value1", "value2" };
+            return (DataBusiness)_repo.GetData();
         }
 
         // GET api/values/5
@@ -26,8 +30,9 @@ namespace WebAPI_Cicklum.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(DataBusiness value)
         {
+            //Call respository to persist in DB
         }
 
         // PUT api/values/5

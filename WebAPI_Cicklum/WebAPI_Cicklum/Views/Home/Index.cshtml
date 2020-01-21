@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "WebAPICiklum";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+@section Scripts {
+    <script type="text/javascript" src="~/data.js"></script>
+}
+<div ng-controller="DataController as DataCtrl" class="ng-cloak">
+    <section>
+        <form ng-submit="DataCtrl.submit()">
+            {{DataCtrl.apiData.name}}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Num Staff</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in DataCtrl.apiData.details">
+                        <td>{{item.type}}</td>
+                        <td><input type="text" ng-model="item.numStaf" /></td>
+                        <td>
+                            @*<button ng-click="DataCtrl.submit()" class="btn btn-primary" title="Click here to save Num of Staff">Save</button>*@
+                            <input type="submit" value="Save" />
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </section>
+</div>

@@ -7,10 +7,10 @@
 @section Scripts {
     <script type="text/javascript" src="~/data.js"></script>
 }
-<div ng-controller="DataController as DataCtrl" class="ng-cloak">
+<div ng-controller="DataController as DataCtrl">
     <section>
         <form ng-submit="DataCtrl.submit()">
-            {{DataCtrl.apiData.name}}
+            <div ng-if="DataCtrl.apiData.name">{{DataCtrl.apiData.name}}</div>
             <table>
                 <thead>
                     <tr>
